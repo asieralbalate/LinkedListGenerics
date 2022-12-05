@@ -1,8 +1,9 @@
 public class InvalidIndexException extends LinkedListException {
-    public InvalidIndexException(){
+    public InvalidIndexException() {
         super();
     }
-    public InvalidIndexException(String message){
+
+    public InvalidIndexException(String message) {
         super(message);
     }
 }

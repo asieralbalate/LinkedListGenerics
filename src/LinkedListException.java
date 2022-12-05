@@ -1,8 +1,9 @@
-public class LinkedListException extends Exception{
-    public LinkedListException(){
+public class LinkedListException extends Exception {
+    public LinkedListException() {
         super();
     }
-    public LinkedListException(String message){
-        super (message);
+
+    public LinkedListException(String message) {
+        super(message);
     }
 }

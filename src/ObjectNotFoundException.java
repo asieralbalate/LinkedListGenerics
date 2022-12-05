@@ -1,8 +1,9 @@
-public class ObjectNotFoundException extends LinkedListException{
-    public ObjectNotFoundException(){
+public class ObjectNotFoundException extends LinkedListException {
+    public ObjectNotFoundException() {
         super();
     }
-    public ObjectNotFoundException(String message){
+
+    public ObjectNotFoundException(String message) {
         super(message);
     }
 }

@@ -88,13 +88,13 @@ public class LinkedList {
         Element temp = first;
         while (e != null) {
             if (e.getObject().equals(obj)) {
-                if (e == first){
+                if (e == first) {
                     first = e.getNext();
                 } else {
                     temp.setNext(e.getNext());
                 }
-                if (e.getNext() == null){
-                    if (first == null){
+                if (e.getNext() == null) {
+                    if (first == null) {
                         last = null;
                     } else {
                         last = temp;
@@ -109,17 +109,18 @@ public class LinkedList {
         throw new ObjectNotFoundException("Object not found");
     }
 
-    public void empty(){
+    public void empty() {
         first = null;
         last = null;
     }
+
     @Override
-    public String toString(){
+    public String toString() {
         String s = "";
         Element e = first;
         boolean alreadyComma = false;
-        while (e != null){
-            if (!alreadyComma){
+        while (e != null) {
+            if (!alreadyComma) {
                 alreadyComma = true;
             } else {
                 s += ", ";

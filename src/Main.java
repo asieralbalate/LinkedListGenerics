@@ -7,11 +7,9 @@ public class Main {
         try {
             Object obj = queue.pop();
             System.out.println("Popped object = " + obj);
-        }
-        catch (EmptyListException e){
+        } catch (EmptyListException e) {
             System.err.println("The list was empty");
-        }
-        catch (ObjectNotFoundException e) {
+        } catch (ObjectNotFoundException e) {
             e.printStackTrace();
         }
         queue.print();

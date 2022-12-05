@@ -2,12 +2,12 @@ public class Element {
     private Object object;
     private Element next;
 
-    public Element(Object newObject){
-     this.object = newObject;
-     next = null;
+    public Element(Object newObject) {
+        this.object = newObject;
+        next = null;
     }
 
-    public void setNext(Element element){
+    public void setNext(Element element) {
         next = element;
     }
 
@@ -23,7 +23,7 @@ public class Element {
         this.object = newObject;
     }
 
-    public void delete(){
+    public void delete() {
         object = null;
         next = null;
     }

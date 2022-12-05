@@ -1,8 +1,9 @@
-public class EmptyListException extends ObjectNotFoundException{
-    public EmptyListException(){
+public class EmptyListException extends ObjectNotFoundException {
+    public EmptyListException() {
         super();
     }
-    public EmptyListException(String message){
+
+    public EmptyListException(String message) {
         super(message);
     }
 }

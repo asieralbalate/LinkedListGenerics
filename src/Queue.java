@@ -1,12 +1,14 @@
 public class Queue {
     private LinkedList list;
 
-    public Queue(){
+    public Queue() {
         list = new LinkedList();
     }
-    public void push(Object object){
+
+    public void push(Object object) {
         list.insertLast(object);
     }
+
     public Object pop() throws EmptyListException {
         Object object = list.getFirstObject();
         try {
@@ -16,18 +18,21 @@ public class Queue {
         }
         return object;
     }
-    public boolean isEmpty(){
+
+    public boolean isEmpty() {
         return list.isEmpty();
     }
-    public void empty(){
+
+    public void empty() {
         list.empty();
     }
+
     @Override
-    public String toString(){
+    public String toString() {
         return list.toString();
     }
 
-    public void print(){
+    public void print() {
         System.out.println(toString());
     }
 }

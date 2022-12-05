@@ -1,11 +1,11 @@
 public class Stack {
     private LinkedList list;
 
-    public Stack(){
+    public Stack() {
         list = new LinkedList();
     }
 
-    public void push(Object object){
+    public void push(Object object) {
         list.insertLast(object);
     }
 
@@ -19,19 +19,19 @@ public class Stack {
         return object;
     }
 
-    public boolean isEmpty(){
+    public boolean isEmpty() {
         return list.isEmpty();
     }
 
-    public void empty(){
+    public void empty() {
         list.empty();
     }
 
-    public String toString(){
+    public String toString() {
         return list.toString();
     }
 
-    public void print(){
+    public void print() {
         System.out.println(toString());
     }
 }
