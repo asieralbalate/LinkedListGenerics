@@ -1,22 +1,22 @@
-public class Queue {
-    private LinkedList list;
+public class Queue<V> {
+    private LinkedList<V> list;
 
     public Queue() {
-        list = new LinkedList();
+        list = new LinkedList<V>();
     }
 
-    public void push(Object object) {
-        list.insertLast(object);
+    public void push(V value) {
+        list.insertLast(value);
     }
 
-    public Object pop() throws EmptyListException {
-        Object object = list.getFirstObject();
+    public V pop() throws EmptyListException {
+        V value = list.getFirstValue();
         try {
-            list.remove(object);
-        } catch (ObjectNotFoundException e) {
+            list.remove(value);
+        } catch (ValueNotFoundException e) {
             e.printStackTrace();
         }
-        return object;
+        return value;
     }
 
     public boolean isEmpty() {

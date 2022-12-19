@@ -1,30 +1,28 @@
-public class Element {
-    private Object object;
-    private Element next;
-
-    public Element(Object newObject) {
-        this.object = newObject;
+public class Element <V> {
+    private V value;
+    private Element<V> next;
+    public Element(V newValue) {
+        this.value = newValue;
         next = null;
     }
-
     public void setNext(Element element) {
         next = element;
     }
 
-    public Object getObject() {
-        return object;
+    public V getValue() {
+        return value;
     }
 
     public Element getNext() {
         return next;
     }
 
-    public void setObject(Object newObject) {
-        this.object = newObject;
+    public void setValue(V value) {
+        this.value = value;
     }
 
     public void delete() {
-        object = null;
+        value = null;
         next = null;
     }
 }

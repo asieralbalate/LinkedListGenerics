@@ -9,7 +9,7 @@ public class Main {
             System.out.println("Popped object = " + obj);
         } catch (EmptyListException e) {
             System.err.println("The list was empty");
-        } catch (ObjectNotFoundException e) {
+        } catch (ValueNotFoundException e) {
             e.printStackTrace();
         }
         queue.print();

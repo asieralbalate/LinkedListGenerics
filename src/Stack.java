@@ -1,22 +1,22 @@
-public class Stack {
-    private LinkedList list;
+public class Stack <V> {
+    private LinkedList <V> list;
 
     public Stack() {
-        list = new LinkedList();
+        list = new LinkedList<V>();
     }
 
-    public void push(Object object) {
-        list.insertLast(object);
+    public void push(V value) {
+        list.insertLast(value);
     }
 
-    public Object pop() throws EmptyListException {
-        Object object = list.getLastObject();
+    public V pop() throws EmptyListException {
+        V value = list.getLastValue();
         try {
-            list.remove(object);
-        } catch (ObjectNotFoundException e) {
+            list.remove(value);
+        } catch (ValueNotFoundException e) {
             e.printStackTrace();
         }
-        return object;
+        return value;
     }
 
     public boolean isEmpty() {

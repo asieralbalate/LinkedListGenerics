@@ -1,15 +1,15 @@
 
-public class LinkedList {
-    private Element first;
-    private Element last;
+public class LinkedList <V> {
+    private Element <V> first;
+    private Element <V> last;
 
     public LinkedList() {
         first = null;
         last = null;
     }
 
-    public void insertFirst(Object obj) {
-        Element element = new Element(obj);
+    public void insertFirst(V value) {
+        Element<V> element = new Element<>(value);
         element.setNext(first);
         first = element;
         if (isEmpty()) {
@@ -18,8 +18,8 @@ public class LinkedList {
 
     }
 
-    public void insertLast(Object obj) {
-        Element element = new Element(obj);
+    public void insertLast(V value) {
+        Element<V> element = new Element<>(value);
         if (!isEmpty()) {
             last.setNext(element);
         }
@@ -30,9 +30,9 @@ public class LinkedList {
     }
 
     public void print() {
-        Element element = first;
+        Element<V> element = first;
         while (element != null) {
-            System.out.println(element.getObject());
+            System.out.println(element.getValue());
             element = element.getNext();
         }
     }
@@ -41,22 +41,22 @@ public class LinkedList {
         return first == null || last == null;
     }
 
-    public Object getFirstObject() throws EmptyListException {
+    public V getFirstValue() throws EmptyListException {
         if (isEmpty()) {
             throw new EmptyListException("The list is empty.");
         }
-        return first.getObject();
+        return first.getValue();
     }
 
-    public Object getLastObject() throws EmptyListException {
+    public V getLastValue() throws EmptyListException {
         if (isEmpty()) {
             throw new EmptyListException("The list is empty");
         }
-        return last.getObject();
+        return last.getValue();
     }
 
     public int getNumElements() {
-        Element e = first;
+        Element<V> e = first;
         int counter = 0;
         while (e != null) {
             e = e.getNext();
@@ -65,29 +65,29 @@ public class LinkedList {
         return counter;
     }
 
-    public Object getObjectAtPosition(int index) throws EmptyListException,
+    public V getValueAtPosition(int index) throws EmptyListException,
             InvalidIndexException {
         if (isEmpty()) {
             throw new EmptyListException("Empty list");
         }
-        Element e = first;
+        Element<V> e = first;
         for (int i = 0; i < index; i++) {
             if (e == null) {
                 throw new InvalidIndexException("Invalid index");
             }
             e = e.getNext();
         }
-        return e.getObject();
+        return e.getValue();
     }
 
-    public void remove(Object obj) throws ObjectNotFoundException {
+    public void remove(V value) throws ValueNotFoundException {
         if (isEmpty()) {
             throw new EmptyListException("Empty list.");
         }
-        Element e = first;
-        Element temp = first;
+        Element<V> e = first;
+        Element<V> temp = first;
         while (e != null) {
-            if (e.getObject().equals(obj)) {
+            if (e.getValue().equals(value)) {
                 if (e == first) {
                     first = e.getNext();
                 } else {
@@ -106,7 +106,7 @@ public class LinkedList {
                 e = e.getNext();
             }
         }
-        throw new ObjectNotFoundException("Object not found");
+        throw new ValueNotFoundException("Value not found");
     }
 
     public void empty() {
@@ -117,7 +117,7 @@ public class LinkedList {
     @Override
     public String toString() {
         String s = "";
-        Element e = first;
+        Element<V> e = first;
         boolean alreadyComma = false;
         while (e != null) {
             if (!alreadyComma) {
@@ -125,7 +125,7 @@ public class LinkedList {
             } else {
                 s += ", ";
             }
-            s += e.getObject();
+            s += e.getValue();
             e = e.getNext();
         }
         return s;
